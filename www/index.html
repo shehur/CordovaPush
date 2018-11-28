@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+        <title>PUSH</title>
+        <style type="text/css">
+            button { width: 165px; }
+        </style>
+    </head>
+    <body>
+        <br>
+        <center>
+            <h4>PUSH</h4>
+            <br>
+            <br>
+            <button id="acionar">ACIONAR</button><br><br>
+            <textarea id="resposta" rows="10"></textarea>
+        </center>
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+        <script type="text/javascript">
+            var resposta = document.getElementById('resposta');
+            var notification = localStorage.getItem('notification');
+            if(notification != null) {
+                resposta.innerText = notification.trim();
+                localStorage.removeItem('notification');
+            }
+        </script>
+    </body>
+</html>
